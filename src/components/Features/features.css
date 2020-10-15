@@ -52,12 +52,12 @@
 	top: 100px;
 	right: 0;
 	z-index: 99;
-	max-height: 300px;
+	max-width: 300px;
 }
 
 @media (max-width: 960px) {
 	.rocket {
-		max-height: 230px;
+		max-width: 230px;
 	}
 
 	.table-column {
