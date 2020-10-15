@@ -17,10 +17,12 @@ class App extends React.Component {
 		rocket: 'Falcon 1',
 		rocketFeatures: null,
 		rockets: [],
+		footer: []
 	}
 
 	componentDidMount() {
 		this.updateRocket()
+		// this.updateFooter()
 	}
 
 	updateRocket() {
@@ -30,7 +32,7 @@ class App extends React.Component {
 				return data
 			})
 			.then(data => data.find(item => item.name === this.state.rocket))
-			.then(features => this.setState({rocketFeatures: features}))
+			.then(rocketFeatures => this.setState({rocketFeatures}))
 	}
 
 	changeRocket = rocket => {
@@ -39,12 +41,28 @@ class App extends React.Component {
 		}, this.updateRocket)
 	}
 
+	updateFooter() {
+		this.fetchData.getCompany()
+			// .then(data => {
+			// 	this.setState({rockets: data.map(item => item.name)})
+			// 	return data
+			// })
+			.then(data => data.map((item, index) => {
+				return {index: item}
+			}))
+			.then(footerLinks => this.setState({footer: footerLinks}))
+	}
+
 	render() {
+		console.log(
+			this.fetchData.getCompany()
+				.then(data => data.links)
+		)
 		return (
 			<>
 				<Header rockets={this.state.rockets} changeRocket={this.changeRocket} />
 				<Main rocket={this.state.rocket} />
-				<Features />
+				{this.state.rocketFeatures && <Features {...this.state.rocketFeatures} />}
 				<Footer />
 			</>
 		)
