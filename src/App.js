@@ -22,7 +22,7 @@ class App extends React.Component {
 		rocket: 'Falcon 1',
 		rocketFeatures: null,
 		rockets: [],
-		company: null
+		company: null,
 	}
 
 	componentDidMount() {
