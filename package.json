@@ -33,6 +33,7 @@
     ]
   },
   "devDependencies": {
-    "logo.svg": "^1.0.1"
+    "logo.svg": "^1.0.1",
+    "react-router-dom": "^5.2.0"
   }
 }

@@ -6,11 +6,10 @@ const rocket = {
 	'Falcon 1': 'falcon-1',
 	'Falcon 9': 'falcon-9',
 	'Falcon Heavy': 'falcon-heavy',
-	'other': 'starship'
+	'Starship': 'starship'
 }
 
-const Features = (props) => {
-	const {name, height, diameter, mass, payload_weights: payloadWeights, description} = props
+const Features = ({name, height, diameter, mass, payload_weights: payloadWeights, description}) => {
 	return (
 		<section className="features">
 			<h2 className="features-title">
@@ -54,7 +53,7 @@ const Features = (props) => {
 				</table>
 				{/*<RellaxWrapper speed={14}>*/}
 				<img
-					src={`./img/${rocket.hasOwnProperty(name) ? rocket[name] : rocket.other}.png`}
+					src={`./img/${rocket[name]}.png`}
 					alt="rocket"
 					className="rocket"
 				/>

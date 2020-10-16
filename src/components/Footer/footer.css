@@ -29,6 +29,9 @@
 	margin-top: 0;
 	margin-bottom: 30px;
 }
+.class-name-div {
+	max-width: 500px;
+}
 
 .footer-link {
 	color: #808080;
