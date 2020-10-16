@@ -25,14 +25,14 @@ const Calendar = () => {
 					<ul className="calendar-list">
 						{
 							data.map(item => (
-								<li className="calendar-item">
+								<li className="calendar-item" key={item.id}>
 									<article className="launches">
 										<div className="launches-image">
 											<img src={item.links.patch.small} alt=""/>
 										</div>
 										<div className="launches-content">
 											<h2 className="launches-title">{item.name}</h2>
-											<Link to="details" className="button launches-details">Подробнее</Link>
+											<Link to="/details" className="button launches-details">Подробнее</Link>
 										</div>
 									</article>
 								</li>
